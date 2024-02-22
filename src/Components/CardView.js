@@ -5,9 +5,7 @@ import { addUser } from "../Redux/dataSlice";
 
 import { FiPhoneCall, FiUserPlus, FiUserMinus } from "react-icons/fi";
 import { CiGlobe } from "react-icons/ci";
-// import { FiUserPlus } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
-// import { FiUserMinus } from "react-icons/fi";
 import { FaRegStar } from "react-icons/fa6";
 
 const CardView = ({ user }) => {
