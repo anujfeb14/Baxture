@@ -1,12 +1,14 @@
 import { Card, Text, Button, Group, Image, Flex } from "@mantine/core";
-import { FiPhoneCall } from "react-icons/fi";
-import { CiGlobe } from "react-icons/ci";
-import { FiUserPlus } from "react-icons/fi";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../Redux/dataSlice";
-import { FiUserMinus } from "react-icons/fi";
 import { USER_INITIALS_API } from "../utils/Constants";
+import { addUser } from "../Redux/dataSlice";
+
+import { FiPhoneCall, FiUserPlus, FiUserMinus } from "react-icons/fi";
+import { CiGlobe } from "react-icons/ci";
+// import { FiUserPlus } from "react-icons/fi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+// import { FiUserMinus } from "react-icons/fi";
+import { FaRegStar } from "react-icons/fa6";
 
 const CardView = ({ user }) => {
   const allUsers = useSelector((store) => store.user.users);
@@ -43,7 +45,9 @@ const CardView = ({ user }) => {
         </Flex>
 
         <Group justify="center" mt="md" mb="xs">
-          <Text fw={500}>{user.name}</Text>
+          <Text fw={500}>
+            {user.name} {user.isFollowing ? <FaRegStar /> : null}
+          </Text>
         </Group>
 
         <Text size="sm" mt="sm" c="dimmed">
@@ -59,9 +63,8 @@ const CardView = ({ user }) => {
 
         <Text size="sm" mt="sm" mb="sm" c="dimmed">
           <span>
-            <CiGlobe />
+            <CiGlobe /> {user.website}
           </span>
-          {user.website}
         </Text>
 
         <div>
